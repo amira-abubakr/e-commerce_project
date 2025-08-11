@@ -1,27 +1,20 @@
+import "./App.css";
 
-import './App.css'
-import  BestDressSection from './components/BestDressSection'
-import FashionLanding from './components/CollectionSection'
-import Footer from './components/Footer'
-import HeroSection from './components/Hero'
-import Navbar from './components/Nav'
-import ServiceFeatures from './components/ServiceFeatures'
-import './index.css'
+import { Routes, Route } from "react-router-dom";
+import SignupSection from "./pages/SignUp";
+
+import "./index.css";
+import Home from "./pages/Home";
 
 function App() {
-  
-
   return (
     <div>
-      <Navbar />
-      <HeroSection />
-      <FashionLanding />
-      <BestDressSection />
-      <ServiceFeatures/>
-      <Footer/>
-
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignupSection />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

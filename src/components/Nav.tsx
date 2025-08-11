@@ -1,6 +1,13 @@
 // src/components/Navbar.tsx
 import React, { useState } from "react";
-import { FaSearch, FaHeart, FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaSearch,
+  FaHeart,
+  FaShoppingCart,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
+import { Link } from "react-router";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +15,6 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 text-white bg-transparent pt-2">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        
         {/* Logo */}
         <div className="text-3xl font-bold">
           <span className="text-[#8B4513]">Sh</span>
@@ -22,7 +28,9 @@ const Navbar: React.FC = () => {
           <li className="cursor-pointer hover:text-[#8B4513]">Category</li>
           <li className="cursor-pointer hover:text-[#8B4513]">About Us</li>
           <li className="cursor-pointer hover:text-[#8B4513]">Contact Us</li>
-          <li className="cursor-pointer hover:text-[#8B4513]">Sign Up</li>
+          <Link to="/signup" className="cursor-pointer hover:text-[#8B4513]">
+            Sign Up
+          </Link>
         </ul>
 
         {/* Icons (Desktop) */}
@@ -33,7 +41,10 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Menu Icon (Mobile) */}
-        <div className="md:hidden cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
+        <div
+          className="md:hidden cursor-pointer"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </div>
       </div>
