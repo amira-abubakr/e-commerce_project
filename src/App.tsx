@@ -16,6 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         {/* Add more routes as needed */}
       </Routes>
+      
     </div>
   );
 }

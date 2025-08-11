@@ -1,5 +1,6 @@
 // src/components/Navbar.tsx
 import React, { useState } from "react";
+import { useEffect } from "react";
 import {
   FaSearch,
   FaHeart,
@@ -12,8 +13,45 @@ import { Link } from "react-router";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+
+   const [isLightSection, setIsLightSection] = useState(false);
+
+ useEffect(() => {
+  const lightSections = document.querySelectorAll(".light-section");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsLightSection(true);
+        }
+      });
+
+      // لو ولا واحد فاتح، ارجعي للوضع الغامق
+      if (![...entries].some(e => e.isIntersecting)) {
+        setIsLightSection(false);
+      }
+    },
+    { threshold: 0.5 }
+  );
+
+  lightSections.forEach(section => observer.observe(section));
+
+  return () => {
+    lightSections.forEach(section => observer.unobserve(section));
+  };
+}, []);
+
+
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 text-white bg-transparent pt-2">
+      <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isLightSection
+          ? "bg-white text-black shadow-md"
+          : "bg-transparent text-white"
+      }`}
+    >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <div className="text-3xl font-bold">

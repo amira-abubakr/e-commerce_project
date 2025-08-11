@@ -36,7 +36,7 @@ const products2: Product[] = [
 const BestDressSection: React.FC = () => {
   return (
     <div>
-    <section className="w-full bg-white py-24">
+    <section className="w-full bg-white py-24 light-section" >
       {/* Title */}
       <h1 className="text-center text-3xl md:text-4xl font-light tracking-wide mb-10">
         THE BEST DRESS FOR THE BEST WOMAN
@@ -79,7 +79,7 @@ const BestDressSection: React.FC = () => {
     </section>
 
 
- <section className="w-full bg-white py-24">
+ <section className="w-full bg-white py-24 light-section">
       {/* Title */}
       <h1 className="text-center text-3xl  md:text-4xl font-light tracking-wide mb-10">
        BEST OUTFIT FOR YOUR HAPPINESS

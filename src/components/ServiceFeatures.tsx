@@ -3,8 +3,8 @@ import { FaThumbsUp, FaPhoneAlt, FaTruck, FaLock } from "react-icons/fa";
 
 export default function ServiceFeatures() {
   return (
-    <section className="w-full bg-white py-14">
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <section className="w-full bg-white py-14 light-section">
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-8 light-section">
         
         {/* Left vertical box */}
         <div className="bg-[#F3F3F3] p-4">
