@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
         {/* Links (Desktop) */}
         <ul className="hidden md:flex gap-6 items-center text-lg font-medium">
           <li className="cursor-pointer hover:text-[#8B4513]">Home</li>
-          <li className="cursor-pointer hover:text-[#8B4513]">Category</li>
+          <Link to="/category" className="cursor-pointer hover:text-[#8B4513]">Category</Link>
           <li className="cursor-pointer hover:text-[#8B4513]">About Us</li>
           <li className="cursor-pointer hover:text-[#8B4513]">Contact Us</li>
           <Link to="/signup" className="cursor-pointer hover:text-[#8B4513]">

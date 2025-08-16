@@ -13,10 +13,11 @@ import img4 from "../assets/image/icon-send.png";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#8B4513] text-white mt-5">
-      <div className="max-w-7xl mx-auto  py-8">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-8">
+        {/* Sections */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Exclusive / Subscribe */}
-          <div className="">
+          <div>
             <h4 className="text-sm font-semibold mb-3">Exclusive</h4>
             <div className="h-[2px] w-10 bg-white opacity-20 mb-4" />
 
@@ -25,11 +26,10 @@ const Footer: React.FC = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 bg-transparent pl-3 py-2 text-white placeholder-white outline-none"
-                aria-label="newsletter-email"
+                className="flex-1 bg-transparent pl-3 py-2 text-white placeholder-white outline-none text-xs sm:text-sm"
               />
-              <button className=" text-[#white] flex items-center justify-center pr-5 py-2">
-                <img src={img4} alt="Send Icon" className="w-25 h-5" />
+              <button className="flex items-center justify-center pr-4 py-2">
+                <img src={img4} alt="Send Icon" className="w-5 h-5" />
               </button>
             </div>
           </div>
@@ -82,13 +82,9 @@ const Footer: React.FC = () => {
               Save $3 with App New User Only
             </p>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-wrap">
               {/* QR */}
-              <img
-                src={img1}
-                alt="QR code"
-                className="w-18 h-18 object-cover"
-              />
+              <img src={img1} alt="QR code" className="w-16 h-16 object-cover" />
 
               {/* Badges */}
               <div className="flex flex-col gap-2">
@@ -115,12 +111,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* bottom thin divider and copyright line - kept minimal as in image */}
-        <div className="mt-6 border-t border-white/10 pt-4 text-xs text-white/80 flex items-center justify-between">
-          <div>© Copyright Rimel 2022. All right reserved</div>
-          <div className="hidden sm:flex items-center gap-4">
-            <span className="text-white/80">Privacy</span>
-            <span className="text-white/80">Terms</span>
+        {/* bottom section */}
+        <div className="mt-6 border-t border-white/10 pt-4 text-xs text-white/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>© Copyright Rimel 2022. All rights reserved</div>
+          <div className="flex items-center gap-4">
+            <span className="hover:underline cursor-pointer">Privacy</span>
+            <span className="hover:underline cursor-pointer">Terms</span>
           </div>
         </div>
       </div>

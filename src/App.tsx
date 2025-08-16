@@ -5,7 +5,8 @@ import SignupSection from "./pages/SignUp";
 
 import "./index.css";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Login from "./pages/LogIn";
+import ProductList from "./pages/ProductList";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignupSection />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/category" element={<ProductList />} />
         {/* Add more routes as needed */}
       </Routes>
       
