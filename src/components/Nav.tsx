@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
           : "bg-transparent text-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
         {/* Logo */}
         <div className="text-3xl font-bold">
           <span className="text-[#8B4513]">Sh</span>
