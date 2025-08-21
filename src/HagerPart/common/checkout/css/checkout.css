@@ -1,0 +1,166 @@
+.Checkout {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.8fr 1.2fr;
+  grid-template-columns: 1.8fr 1.2fr;
+  height: 100vh;
+  overflow-y: hidden;
+  padding: 25px;
+}
+.Checkout h2 {
+  color: var(--black-color);
+  font-family: var(--PlayfairDisplay);
+  font-size: var(--header-font);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.Checkout .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 35px;
+}
+.Checkout .left .steps {
+  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  position: relative;
+}
+.Checkout .left .steps .step {
+  color: var(--text-color);
+  position: relative;
+  z-index: 4;
+}
+.Checkout .left .steps .step .icon {
+  border: 1px solid var(--text-color);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 50%;
+  padding: 10px;
+}
+.Checkout .left .steps .step p {
+  background-color: white;
+  width: 150px;
+}
+.Checkout .left .steps .step p:nth-of-type(2) {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.Checkout .left .steps .step:nth-of-type(2) {
+  position: relative;
+}
+.Checkout .left .steps .step:nth-of-type(2)::before, .Checkout .left .steps .step:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: var(--text-color);
+  height: 2px;
+  width: 120px;
+  z-index: 3;
+  top: 18px;
+  opacity: 0.5;
+}
+.Checkout .left .steps .step:nth-of-type(2)::after {
+  right: -25px;
+}
+.Checkout .left .steps .step:nth-of-type(2)::before {
+  left: -140px;
+}
+.Checkout .left .steps .step.active {
+  color: #8B4513;
+}
+.Checkout .left .steps .step.active .icon {
+  background-color: #EDE5E1;
+}
+
+.Checkout .right {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.Checkout .right .header {
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: var(--PlayfairDisplay);
+}
+.Checkout .right .orders > * {
+  margin-bottom: 10px;
+}
+.Checkout .right .recipt {
+  width: 100%;
+  color: var(--sec-text-color);
+}
+.Checkout .right .recipt p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 8px;
+}
+.Checkout .right .recipt p span {
+  width: 120px;
+}
+.Checkout .right .recipt p.voucher span {
+  color: var(--imp-color);
+}
+.Checkout .right .recipt p.total {
+  color: var(--black-color);
+  font-weight: 500;
+}
+
+.Checkout .left {
+  overflow-y: auto;
+}
+.Checkout .children {
+  width: 100%;
+}
+.Checkout > *::-webkit-scrollbar {
+  width: 6px;
+  visibility: hidden;
+}
+.Checkout > *::-webkit-scrollbar-thumb {
+  background-color: var(--text-color);
+  border-radius: 10px;
+  visibility: hidden;
+}

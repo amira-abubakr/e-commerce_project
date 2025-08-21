@@ -1,5 +1,5 @@
 // src/components/Navbar.tsx
-import React, { useState } from "react";
+import React, { useState ,useContext } from "react";
 import { useEffect } from "react";
 import {
   FaSearch,
@@ -9,13 +9,16 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { Link } from "react-router";
-
+import {LightContext} from "../context/lightContext/lightContext.jsx";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const {isLightSection, setIsLightSection} =useContext(LightContext)as {
+  isLightSection: boolean;
+  setIsLightSection: (value: boolean) => void;
+};
 
-   const [isLightSection, setIsLightSection] = useState(false);
-
+ 
  useEffect(() => {
   const lightSections = document.querySelectorAll(".light-section");
 
