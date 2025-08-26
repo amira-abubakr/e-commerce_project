@@ -88,7 +88,7 @@ const [currentSize,setCurrentSize]=useState(Product.availableSizes[0]);
 
   return( 
   // Start of ProductDetails
-  <div className="ProductDetails">
+  <div className="ProductDetails ">
 
 {/*    Start of main container  
  */}
@@ -111,7 +111,44 @@ const [currentSize,setCurrentSize]=useState(Product.availableSizes[0]);
 <Swiper 
 navigation={true} modules={[Navigation]} className="mySwiper"
       slidesPerView={4}
-      spaceBetween={20}
+             spaceBetween={25}
+
+        breakpoints={{
+
+  200:{
+ slidesPerView:2,
+       spaceBetween:45
+
+        },
+  416:{
+ slidesPerView:3,
+       spaceBetween:15
+
+        },
+      888:{
+ slidesPerView:2,
+       spaceBetween:60
+
+        }, 
+     936:{
+ slidesPerView:3,
+       spaceBetween:25
+
+        },
+   
+        1114:{
+ slidesPerView:3,
+       spaceBetween:50
+
+        },
+        1200:{
+ slidesPerView:4,
+       spaceBetween:25
+
+        },
+   
+      }}
+    
       
   >
 

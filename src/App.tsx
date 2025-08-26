@@ -8,11 +8,14 @@ import Home from "./pages/Home";
 import Login from "./pages/LogIn.tsx";
 
 //Hager-part
+import Layout from "./pages/Layout.tsx";
 import ProductDetails from "./HagerPart/pages/product-Details/product-Details.jsx"
 import Cart from "./HagerPart/pages/cart/cart.jsx"
-import ContactPerson from "./HagerPart/pages/contactPerson/contactPerson.jsx"
-import Layout from "./pages/Layout.tsx";
 import Checkout from "./HagerPart/common/checkout/checkout.jsx";
+import ContactPerson from "./HagerPart/pages/contactPerson/contactPerson.jsx"
+import Shipping from "./HagerPart/pages/shipping/shipping.jsx"
+import Confirmation from "./HagerPart/pages/confirmation/confirmation.jsx"
+import SuccessPayment from "./HagerPart/pages/success-payment/success-payment.jsx"
 
 function App() {
   return (
@@ -32,7 +35,11 @@ function App() {
 
            <Route path="/checkout" element={<Checkout/>}>
       <Route path=""  element={<ContactPerson/>} />
+      <Route path="shipping"  element={<Shipping/>} />
+      <Route path="confirmation" element={<Confirmation/>} />
            </Route>
+
+           <Route path="/success-payment" element={<SuccessPayment/>}/>
 
 
        

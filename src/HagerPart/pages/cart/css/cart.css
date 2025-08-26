@@ -1,10 +1,12 @@
-
-
 .Cart {
   margin: 50px 0px;
   font-family: var(--Lato-Regular);
   color: var(--black-color);
   padding: 25px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
 }
 .Cart .header {
   font-family: var(--PlayfairDisplay);
@@ -24,21 +26,32 @@
       -ms-flex-align: start;
           align-items: flex-start;
   position: relative;
+  height: 70vh;
 }
-.Cart .left {
+.Cart .cart-InnerContainer .left {
   width: 85%;
+  overflow-y: auto;
+  height: 100%;
 }
-.Cart .left .cards > * {
+.Cart .cart-InnerContainer .left .cards {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.Cart .cart-InnerContainer .left .cards > * {
   margin-bottom: 20px;
+  padding: 0px 10px;
 }
-.Cart .left .cards .ProductSummary {
+.Cart .cart-InnerContainer .left .cards .ProductSummary {
   width: 100%;
+}
+.Cart .cart-InnerContainer .left::-webkit-scrollbar, .Cart .cart-InnerContainer .left::-webkit-scrollbar-thumb {
+  visibility: hidden;
+  width: 8px;
+  background-color: rgba(128, 128, 128, 0.2);
 }
 
 .Cart .right {
-  position: sticky;
-  top: 25%;
-  left: 0px;
   width: 80%;
 }
 .Cart .right div, .Cart .right p {
@@ -116,4 +129,134 @@
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .Cart .right .Alert p, .Cart .right .Alert svg {
+    font-size: 12px;
+  }
+}
+@media (max-width: 790px) {
+  .Cart .right .toCheckout {
+    font-size: 12px;
+  }
+}
+@media (max-width: 773px) {
+  .Cart .cart-InnerContainer {
+    -ms-grid-columns: 100%;
+    grid-template-columns: 100%;
+    gap: 5px;
+    height: 100%;
+  }
+  .Cart .cart-InnerContainer > * {
+    width: 100% !important;
+  }
+  .Cart .cart-InnerContainer .right .toCheckout {
+    font-size: 15px;
+  }
+}
+@media (max-width: 395px) {
+  .Cart .cart-InnerContainer .card .text .name {
+    font-size: 14px;
+  }
+  .Cart .cart-InnerContainer .card .text .price p {
+    font-size: 12px;
+  }
+  .Cart .cart-InnerContainer .card .text .buttons .delete a {
+    font-size: 11px;
+  }
+  .Cart .cart-InnerContainer .card .text .ProductSummary .QuantityButton {
+    width: 70px;
+  }
+  .Cart .cart-InnerContainer .right .total p:first-child {
+    font-size: 14px;
+  }
+  .Cart .cart-InnerContainer .right .total p:last-child {
+    font-size: 15px;
+  }
+  .Cart .cart-InnerContainer .right .toCheckout {
+    font-size: 10px;
+  }
+  .Cart .cart-InnerContainer .note input::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+  .Cart .cart-InnerContainer .note input::-moz-placeholder {
+    font-size: 12px;
+  }
+  .Cart .cart-InnerContainer .note input:-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .Cart .cart-InnerContainer .note input::-ms-input-placeholder {
+    font-size: 12px;
+  }
+  .Cart .cart-InnerContainer .note input::placeholder {
+    font-size: 12px;
+  }
+}
+@media (max-width: 336px) {
+  .Cart .cart-InnerContainer .ProductSummary .QuantityButton {
+    width: 50px;
+    font-size: 13px;
+  }
+  .Cart .cart-InnerContainer .note input::-webkit-input-placeholder {
+    font-size: 10px;
+  }
+  .Cart .cart-InnerContainer .note input::-moz-placeholder {
+    font-size: 10px;
+  }
+  .Cart .cart-InnerContainer .note input:-ms-input-placeholder {
+    font-size: 10px;
+  }
+  .Cart .cart-InnerContainer .note input::-ms-input-placeholder {
+    font-size: 10px;
+  }
+  .Cart .cart-InnerContainer .note input::placeholder {
+    font-size: 10px;
+  }
+}
+@media (max-width: 290px) {
+  .Cart .cart-InnerContainer .card .text .name {
+    font-size: 12px;
+  }
+  .Cart .cart-InnerContainer .card .text .price p {
+    font-size: 10px;
+  }
+  .Cart .cart-InnerContainer .card .text .buttons .delete a {
+    font-size: 10px;
+  }
+  .Cart .cart-InnerContainer .card .text .ProductSummary .QuantityButton {
+    width: 70px;
+  }
+  .Cart .cart-InnerContainer .card .text .buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    gap: 8px;
+  }
+  .Cart .cart-InnerContainer .card .text .buttons .ProductSummary .QuantityButton {
+    width: 30px;
+    font-size: 10px;
+  }
+  .Cart .cart-InnerContainer .note input {
+    padding: 3px;
+  }
+  .Cart .cart-InnerContainer .note input ::-webkit-input-placeholder {
+    font-size: 8px;
+  }
+  .Cart .cart-InnerContainer .note input ::-moz-placeholder {
+    font-size: 8px;
+  }
+  .Cart .cart-InnerContainer .note input :-ms-input-placeholder {
+    font-size: 8px;
+  }
+  .Cart .cart-InnerContainer .note input ::-ms-input-placeholder {
+    font-size: 8px;
+  }
+  .Cart .cart-InnerContainer .note input ::placeholder {
+    font-size: 8px;
+  }
 }

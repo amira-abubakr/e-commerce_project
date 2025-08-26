@@ -36,7 +36,7 @@ gap: 15px;
 .show
 {
     
-    height: 600px;
+    height: fit-content;
     overflow: hidden;
     img
     {
@@ -53,16 +53,21 @@ gap: 15px;
 {
     width: $imageWidth;
 
+.swiper-wrapper
+{
+    width: fit-content !important;
+}
 .swiper
 {
-   width: 100%;
-   padding: 5px 0px;
-
+/*    width: 100%;
+ */   padding: 5px 0px;
 
 .swiper-slide
 {
 
-
+/*     width: fit-content !important;
+ */
+ width: 115px !important;
     .container-altImg
     {
         width: 120px;
@@ -221,7 +226,7 @@ margin-left: 5px;
  {
 @include Col-Centering;
 gap: 25px;
-font-size: 18px
+font-size: 18px;
 
 }
 
@@ -346,3 +351,228 @@ border-radius: 5px;
 
 }
 }
+
+@mixin updateText($text-width,$desc-font,$h2-font,$btn-padding)
+{
+    .text
+    {
+        width: $text-width;
+        .description
+        {
+            font-size: $desc-font;
+        }
+         .name h2
+         {
+            font-size: $h2-font;
+         }
+
+        .buttons .addToCart button
+         {
+padding:$btn-padding;
+         }
+    } 
+}
+
+@mixin updateImage($show-width,$alt-width)
+{
+ 
+        .images{
+     .show
+     {
+        
+         width: $show-width;
+     }
+.alt
+{
+         width: $alt-width;
+
+
+}
+}
+
+}
+
+
+
+@media (max-width:1200px) {
+
+    .ProductDetails
+    {
+
+  .text
+{width: 500px;}
+
+ @include updateImage(450px,450px);
+
+
+    }
+
+
+
+}
+
+
+
+
+@media (max-width:1060px) {
+
+
+
+.ProductDetails
+{
+@include updateText(450px,15px,45px,8px);
+ 
+
+ @include updateImage(400px,400px);
+
+
+
+}
+
+
+
+
+}
+@media (max-width:940px) {
+
+
+
+.ProductDetails
+{
+
+    
+ .text
+    {
+        width: 400px;
+
+        .price
+{
+    p{
+
+        &:first-child
+        {
+          
+  font-size: 13px;
+  span:last-child
+  {
+    font-size: 8px;
+  }
+        }
+
+        &:last-child
+        {
+            font-size:18px;
+        }
+    }
+}
+
+
+
+        .sizes p
+        {
+            padding: 17px 20px;
+        }
+                 .name h2
+         {
+            font-size: 38px;
+         }
+
+    }
+ @include updateImage(350px,300px);
+
+
+}
+
+
+
+
+}
+
+
+
+@media (max-width: 888px) {
+
+    .ProductDetails
+    {
+grid-template-columns: 90%;
+
+@include updateText(100%,18px,var(--header-font),10px);
+ @include updateImage(100%,400px);
+.text
+{
+    gap: 20px;
+}
+
+
+
+.images  .alt
+{
+        padding: 10px;
+
+ 
+
+}
+
+
+    }
+    
+}
+
+
+
+@media (max-width:460px) {
+
+    .ProductDetails .text
+    {
+        .name h2 {font-size: 40px;}
+    .sizes
+    {
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+    }
+    
+}
+}
+
+@media (max-width:416px) {
+
+
+.ProductDetails  .images  .alt
+{
+         width: 300px;
+
+
+}
+}
+
+
+
+@media (max-width:350px) {
+        .ProductDetails .text .buttons .addToCart
+        {
+button
+{
+    font-size:10px;
+}
+        }
+
+
+}
+@media (max-width:310px) {
+        .ProductDetails 
+        {
+
+            @include updateText(100%, 15px, 30px, 10px);
+    .text     .buttons 
+        {
+            
+align-items: flex-start;
+flex-direction: column;
+        }
+                }
+
+
+
+}
+
+

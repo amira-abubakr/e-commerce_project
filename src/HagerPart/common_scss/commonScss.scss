@@ -66,6 +66,13 @@
  flex-direction: column;
 
 }
+@mixin end-center
+{
+            display: flex;
+     justify-content:flex-end;
+ align-items:center;
+
+}
 
 
 @mixin center-start

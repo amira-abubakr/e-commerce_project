@@ -53,8 +53,8 @@ chekoutForm?
   <p>{Product?.currency } {Product?.currentPrice}</p>
 </div>
 
-    /*     Start of  buttons  ( quantity ,delete)
- */
+{/*          Start of  buttons  ( quantity ,delete)
+ */} 
     <div className="buttons">
         
 <QuantityButton/>

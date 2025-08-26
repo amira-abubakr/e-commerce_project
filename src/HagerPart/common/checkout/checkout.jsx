@@ -1,16 +1,15 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useRef } from "react";
+import { Outlet,  useResolvedPath } from "react-router-dom";
 import "./css/Checkout.css"
 
-//imports icons
-import { IoPerson } from "react-icons/io5";
-import { FaTruck } from "react-icons/fa";
-import { IoIosCard } from "react-icons/io";
-import { Outlet, useParams, useResolvedPath } from "react-router-dom";
 import { LightContext } from "../../../context/lightContext/lightContext";
 import Alert from "../alert/alert";
 import ProductSummary from "../product-summary/product-summary";
 
-
+//icons
+import { IoPerson } from "react-icons/io5";
+import { FaTruck } from "react-icons/fa";
+import { IoIosCard } from "react-icons/io";
 
 //Imports  image temporarily
 import  image_2 from  "../../../assets/hager-images/image 2.jpg"
@@ -22,11 +21,21 @@ import  Rectangle_5 from  "../../../assets/hager-images/Rectangle 5.jpg"
 export default function Checkout()
 {
    const { setIsLightSection} =useContext(LightContext);
-  
+   const keysRef=useRef([]);
+      const path=useResolvedPath();
+
    useEffect(()=>{
     setIsLightSection(true);
-   })
 
+   },[])
+
+   useEffect(()=>{
+     updateSteps();
+
+   },[path.pathname])
+
+
+  
 
 
 
@@ -68,28 +77,48 @@ export default function Checkout()
        ]
    
    }
-    const path=useResolvedPath();
+     const steps=   [
+           {
+            icon:<IoPerson/>
+           ,text:"Personal Info",
+           path:"/checkout",
+          
+          
+           },
+           {
+            icon:<FaTruck/>
+           ,text:"Shipping Delivery"   ,
+           path:"/checkout/shipping",
+                  
+                  
+   
+           },
+           
+           {
+            icon:<IoIosCard/>
+           ,text:"Confirmation",
+           path:"/checkout/confirmation"   ,
+                  
+                  
+   
+           }
+           
+       ]
+   
     
 
-    const steps=[
-        {
-         icon:<IoPerson/>
-        ,text:"Personal Info",
-        path:"/checkout"
-        },
-        {
-         icon:<FaTruck/>
-        ,text:"Shipping Delivery"   ,
-        path:"/checkout/shipping"
-        },
-        
-        {
-         icon:<IoIosCard/>
-        ,text:"Confirmation",
-        path:"/checkout/confirmation"   
-        }
-        
-    ]
+        function updateSteps()
+   {
+let keys= steps.findIndex((step)=>{return step.path==path.pathname }); 
+
+for(let i=0; i<steps.length;i++){
+  if (i<keys){keysRef.current[i].classList.add("done"); } ;
+  if (i==keys)keysRef.current[i].classList.add("active");
+}
+
+   }
+
+
 
     return <div className="Checkout">
 {/* Start of left 
@@ -101,8 +130,8 @@ export default function Checkout()
           oppix
           <span className="text-[#8B4513]">.</span>
         </div>
-        </div>
         {/* End of Logo */}
+        </div>
 
 
 <div className="header">
@@ -113,8 +142,10 @@ export default function Checkout()
     {
         steps.map((step,key)=>{
            
-            return (
-<div  key={key} className={`step ${step.path==path.pathname&&"active"}`}>
+            return (  
+<div  key={key}  ref={(s)=>keysRef.current[key]=s} className={`step ${step.done?"done":""} ${(step.path==path.pathname)?"active":""}`}>
+
+  
                 <div className="icon">
 
      {step.icon}

@@ -18,6 +18,9 @@
   color: #8B4513;
   text-decoration: underline;
 }
+.Alert a:hover {
+  opacity: var(--hover-opcaity);
+}
 .Alert .exit {
   cursor: pointer;
 }

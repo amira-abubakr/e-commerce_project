@@ -11,6 +11,10 @@
     a{
         color: #8B4513;
         text-decoration: underline;
+         &:hover
+  {
+    opacity: var(--hover-opcaity);
+  }
     }
     .exit{
         cursor: pointer;

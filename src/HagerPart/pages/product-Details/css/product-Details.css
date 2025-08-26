@@ -35,7 +35,9 @@
   width: 550px;
 }
 .ProductDetails .images .show {
-  height: 600px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   overflow: hidden;
 }
 .ProductDetails .images .show img {
@@ -47,9 +49,20 @@
 .ProductDetails .images .alt {
   width: 550px;
 }
+.ProductDetails .images .alt .swiper-wrapper {
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
 .ProductDetails .images .alt .swiper {
-  width: 100%;
+  /*    width: 100%;
+   */
   padding: 5px 0px;
+}
+.ProductDetails .images .alt .swiper .swiper-slide {
+  /*     width: fit-content !important;
+   */
+  width: 115px !important;
 }
 .ProductDetails .images .alt .swiper .swiper-slide .container-altImg {
   width: 120px;
@@ -283,4 +296,136 @@
   background-color: rgba(255, 255, 255, 0.555);
   padding: 10px 8px;
   border-radius: 5px;
+}
+
+@media (max-width: 1200px) {
+  .ProductDetails .text {
+    width: 500px;
+  }
+  .ProductDetails .images .show {
+    width: 450px;
+  }
+  .ProductDetails .images .alt {
+    width: 450px;
+  }
+}
+@media (max-width: 1060px) {
+  .ProductDetails .text {
+    width: 450px;
+  }
+  .ProductDetails .text .description {
+    font-size: 15px;
+  }
+  .ProductDetails .text .name h2 {
+    font-size: 45px;
+  }
+  .ProductDetails .text .buttons .addToCart button {
+    padding: 8px;
+  }
+  .ProductDetails .images .show {
+    width: 400px;
+  }
+  .ProductDetails .images .alt {
+    width: 400px;
+  }
+}
+@media (max-width: 940px) {
+  .ProductDetails .text {
+    width: 400px;
+  }
+  .ProductDetails .text .price p:first-child {
+    font-size: 13px;
+  }
+  .ProductDetails .text .price p:first-child span:last-child {
+    font-size: 8px;
+  }
+  .ProductDetails .text .price p:last-child {
+    font-size: 18px;
+  }
+  .ProductDetails .text .sizes p {
+    padding: 17px 20px;
+  }
+  .ProductDetails .text .name h2 {
+    font-size: 38px;
+  }
+  .ProductDetails .images .show {
+    width: 350px;
+  }
+  .ProductDetails .images .alt {
+    width: 300px;
+  }
+}
+@media (max-width: 888px) {
+  .ProductDetails {
+    -ms-grid-columns: 90%;
+    grid-template-columns: 90%;
+  }
+  .ProductDetails .text {
+    width: 100%;
+  }
+  .ProductDetails .text .description {
+    font-size: 18px;
+  }
+  .ProductDetails .text .name h2 {
+    font-size: var(--header-font);
+  }
+  .ProductDetails .text .buttons .addToCart button {
+    padding: 10px;
+  }
+  .ProductDetails .images .show {
+    width: 100%;
+  }
+  .ProductDetails .images .alt {
+    width: 400px;
+  }
+  .ProductDetails .text {
+    gap: 20px;
+  }
+  .ProductDetails .images .alt {
+    padding: 10px;
+  }
+}
+@media (max-width: 460px) {
+  .ProductDetails .text .name h2 {
+    font-size: 40px;
+  }
+  .ProductDetails .text .sizes {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (auto)[3];
+    grid-template-columns: repeat(3, auto);
+  }
+}
+@media (max-width: 416px) {
+  .ProductDetails .images .alt {
+    width: 300px;
+  }
+}
+@media (max-width: 350px) {
+  .ProductDetails .text .buttons .addToCart button {
+    font-size: 10px;
+  }
+}
+@media (max-width: 310px) {
+  .ProductDetails .text {
+    width: 100%;
+  }
+  .ProductDetails .text .description {
+    font-size: 15px;
+  }
+  .ProductDetails .text .name h2 {
+    font-size: 30px;
+  }
+  .ProductDetails .text .buttons .addToCart button {
+    padding: 10px;
+  }
+  .ProductDetails .text .buttons {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }

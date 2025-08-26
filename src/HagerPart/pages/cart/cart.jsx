@@ -11,7 +11,7 @@ import  Rectangle_5 from  "../../../assets/hager-images/Rectangle 5.jpg"
 
 // import icons
 import Alert from "../../common/alert/alert";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LightContext } from "../../../context/lightContext/lightContext";
 
 export default function Cart()
@@ -60,7 +60,6 @@ export default function Cart()
     ]
 
 }
-const navigate=useNavigate();
 
     return( 
     
@@ -95,7 +94,7 @@ const navigate=useNavigate();
   {/*     Start of   product-container  (   single product-container)
  */}
  {
-    Array.from({length:3}).map((_,index)=>{
+    Array.from({length:20}).map((_,index)=>{
 return <ProductSummary key={index} Product={Product}/>
     })
  
@@ -133,9 +132,9 @@ return <ProductSummary key={index} Product={Product}/>
     <span>IDR 250000</span>
     </p>
   </div>
-<button onClick={()=>navigate("/checkout")}  className="btn toCheckout">
+<Link  to={"/checkout"}  className="btn toCheckout">
   Proceed to checkout
-</button>
+</Link>
 
 </div>
 
