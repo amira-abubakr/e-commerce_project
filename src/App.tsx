@@ -5,6 +5,7 @@ import SignupSection from "./pages/SignUp.tsx";
 
 import "./index.css";
 import Home from "./pages/Home";
+
 import Login from "./pages/LogIn.tsx";
 
 //Hager-part
@@ -16,6 +17,7 @@ import ContactPerson from "./HagerPart/pages/contactPerson/contactPerson.jsx"
 import Shipping from "./HagerPart/pages/shipping/shipping.jsx"
 import Confirmation from "./HagerPart/pages/confirmation/confirmation.jsx"
 import SuccessPayment from "./HagerPart/pages/success-payment/success-payment.jsx"
+
 
 function App() {
   return (
@@ -47,6 +49,7 @@ function App() {
        {/*Amira part*/}
         <Route path="/signup" element={<SignupSection />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/category" element={<ProductList />} />
         {/* Add more routes as needed */}
 
 
