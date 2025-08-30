@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useRef, type FormEvent } from "react";
 import img from "../assets/image/logn.png";
+import  Login_Api from "../APIs/login.js";
+import { useNavigate } from "react-router-dom";
 
 const LogIn: React.FC = () => {
+  const inputRefs = useRef({
+    email: null as HTMLInputElement | null,
+    password: null as HTMLInputElement | null
+  });
+
+  const navigate=useNavigate();
+ 
+
+async function handleSubmit()
+{
+  console.log(true);
+  
+       let FormData= {
+      username: inputRefs.current.email?.value || '',
+      password: inputRefs.current.password?.value || ''
+    };
+
+    let res= await  Login_Api(FormData);
+ localStorage.setItem("token",JSON.stringify(res));
+   navigate("/");
+
+    
+
+}
+
+
+
+
+
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row relative">
       {/* الجزء الأيسر - الصورة (مخفية في الشاشات الصغيرة) */}
@@ -30,19 +62,26 @@ const LogIn: React.FC = () => {
           </h1>
           <p className="text-sm text-gray-600 mt-2">Enter your details below</p>
 
-          <form className="mt-6 space-y-5">
+          <div className="mt-6 space-y-5" >
             <input
-              type="email"
-              placeholder="Email or Phone Number"
+/*               type="email"
+ */              placeholder="Email or Phone Number"
+               ref={(el) => {
+    inputRefs.current.email = el; 
+  }} 
               className="w-full border-b border-gray-300 focus:border-gray-500 outline-none py-2 text-sm"
             />
             <input
               type="password"
+               ref={(el) => {
+    inputRefs.current.password = el; 
+  }} 
               placeholder="Password"
               className="w-full border-b border-gray-300 focus:border-gray-500 outline-none py-2 text-sm"
             />
             <div className="flex flex-col gap-4">
-              <button
+              <button 
+              onClick={()=>{handleSubmit()}}
                 type="submit"
                 className=" bg-[#8B4513] text-white py-2 rounded-md hover:opacity-90 transition"
               >
@@ -55,7 +94,7 @@ const LogIn: React.FC = () => {
                 Forgot password?
               </a>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
